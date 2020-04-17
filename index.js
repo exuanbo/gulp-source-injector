@@ -1,4 +1,3 @@
-/* eslint new-cap: ["error", { "newIsCapExceptionPattern": "^Buffer\.." }] */
 'use strict'
 
 const fs = require('fs')
@@ -6,9 +5,9 @@ const path = require('path')
 const through = require('through2')
 const PluginError = require('plugin-error')
 
-const PLUGIN_NAME = 'gulp-inject-inline'
+const PLUGIN_NAME = '@exuanbo/gulp-inject-inline'
 
-module.exports = () => {
+const injectInline = () => {
   return through.obj((file, encoding, callback) => {
     const regex = /(?:<!--|\/\*)\s*?inject-inline:\s*?([^\s].+?)\s*?(?:-->|\*\/)/gi
     const rootDir = process.cwd()
@@ -32,8 +31,10 @@ module.exports = () => {
         return String(fs.readFileSync(filePath))
       })
 
-      file.contents = new Buffer.from(contents)
+      file.contents = Buffer.from(contents)
       return callback(null, file)
     }
   })
 }
+
+module.exports = injectInline
