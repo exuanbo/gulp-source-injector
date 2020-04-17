@@ -27,7 +27,7 @@
     "vinyl": "2.2.0"
   },
   "scripts": {
-    "test": "eslint \"**/index**.js\" && mocha"
+    "test": "eslint \"**/index*.js\" && mocha"
   },
   "repository": {
     "type": "git",
