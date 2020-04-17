@@ -1,10 +1,10 @@
 # gulp-inject-inline
 
-[![npm (scoped)](https://img.shields.io/npm/v/@exuanbo/gulp-inject-inline?style=flat-square)](https://www.npmjs.com/package/@exuanbo/gulp-inject-inline)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-yellow?style=flat-square)](https://standardjs.com)
-[![Travis (.com)](https://img.shields.io/travis/com/exuanbo/gulp-inject-inline?style=flat-square)](http://travis-ci.com/exuanbo/gulp-inject-inline)
-[![David](https://img.shields.io/david/exuanbo/gulp-inject-inline?style=flat-square)](https://david-dm.org/exuanbo/gulp-inject-inline)
-[![License](https://img.shields.io/github/license/exuanbo/gulp-inject-inline?style=flat-square)](https://github.com/exuanbo/gulp-inject-inline/blob/master/LICENSE)
+[![npm (scoped)](https://img.shields.io/npm/v/@exuanbo/gulp-inject-inline.svg?style=flat-square)](https://www.npmjs.com/package/@exuanbo/gulp-inject-inline)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-yellow.svg?style=flat-square)](https://standardjs.com)
+[![Travis (.com)](https://img.shields.io/travis/com/exuanbo/gulp-inject-inline.svg?style=flat-square)](http://travis-ci.com/exuanbo/gulp-inject-inline)
+[![David](https://img.shields.io/david/exuanbo/gulp-inject-inline.svg?style=flat-square)](https://david-dm.org/exuanbo/gulp-inject-inline)
+[![License](https://img.shields.io/github/license/exuanbo/gulp-inject-inline.svg?style=flat-square)](https://github.com/exuanbo/gulp-inject-inline/blob/master/LICENSE)
 
 > A javascript, stylesheet and webcomponent inline injection plugin for Gulp.js
 
