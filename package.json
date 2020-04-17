@@ -28,7 +28,7 @@
     "vinyl": "2.2.0"
   },
   "scripts": {
-    "test": "eslint '**/index**.js' && mocha"
+    "test": "eslint \"**/index**.js\" && mocha"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
   },
   "keywords": [
     "gulpplugin",
+    "gulp",
     "gulp-inject",
     "inject",
     "inject-inline"
