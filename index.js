@@ -10,7 +10,7 @@ const PLUGIN_NAME = 'gulp-inject-inline'
 
 module.exports = () => {
   return through.obj((file, encoding, callback) => {
-    const regex = /(?:<!--|\/\*)\sinject-inline:\s(.+?)\s(?:-->|\*\/)/gi
+    const regex = /(?:<!--|\/\*)\s*?inject-inline:\s*?([^\s].+?)\s*?(?:-->|\*\/)/gi
     const rootDir = process.cwd()
 
     if (file.isNull()) {

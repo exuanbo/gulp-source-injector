@@ -61,7 +61,7 @@ Target file `src/index.html`
       /* inject-inline: ./css/style.css */
     </style>
     <script>
-      /* inject-inline: js/script.js */
+      /*inject-inline:js/script.js*/
     </script>
   </head>
   <body>
