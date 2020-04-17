@@ -11,7 +11,7 @@ const PLUGIN_NAME = 'gulp-inject-inline'
 module.exports = () => {
   return through.obj((file, encoding, callback) => {
     const regex = /(?:<!--|\/\*)\sinject-inline:\s(.+?)\s(?:-->|\*\/)/gi
-    const baseDir = __dirname
+    const rootDir = process.cwd()
 
     if (file.isNull()) {
       return callback(null, file)
@@ -27,7 +27,7 @@ module.exports = () => {
       contents = contents.replace(regex, (_match, src) => {
         const filePath =
           src[0] === '/'
-            ? path.join(baseDir, src)
+            ? path.join(rootDir, src)
             : path.join(file.dirname, src)
         return String(fs.readFileSync(filePath))
       })
