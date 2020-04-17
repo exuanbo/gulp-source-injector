@@ -1,1 +1,3 @@
-test/
+test/expected.html
+test/resources/
+*.tgz
