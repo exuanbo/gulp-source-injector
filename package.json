@@ -23,7 +23,6 @@
     "mocha": "7.1.1",
     "prettier": "2.0.4",
     "prettier-config-standard": "1.0.1",
-    "semantic-release": "17.0.6",
     "should": "13.2.3",
     "vinyl": "2.2.0"
   },
