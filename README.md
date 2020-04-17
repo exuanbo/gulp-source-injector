@@ -1,5 +1,12 @@
 # gulp-inject-inline
 
+[![npm (scoped)](https://img.shields.io/npm/v/@exuanbo/gulp-inject-inline?style=flat-square)](https://www.npmjs.com/package/@exuanbo/gulp-inject-inline)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079?style=flat-square)](https://github.com/semantic-release/semantic-release)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-yellow?style=flat-square)](https://standardjs.com)
+[![Travis (.com)](https://img.shields.io/travis/com/exuanbo/gulp-inject-inline?style=flat-square)](http://travis-ci.com/exuanbo/gulp-inject-inline)
+[![David](https://img.shields.io/david/exuanbo/gulp-inject-inline?style=flat-square)](https://david-dm.org/exuanbo/gulp-inject-inline)
+[![GitHub](https://img.shields.io/github/license/exuanbo/gulp-inject-inline?style=flat-square)](https://github.com/exuanbo/gulp-inject-inline/blob/master/LICENSE)
+
 > A javascript, stylesheet and webcomponent inline injection plugin for Gulp.js
 
 ## Table of Contents
@@ -9,6 +16,7 @@
 - [Usage](#usage)
 - [Example](#example)
   - [White Space](#white-space)
+- [License](#license)
 
 ## Introduction
 
@@ -167,3 +175,11 @@ h1 {
   </body>
 </html>
 ```
+
+## License
+
+[MIT](https://github.com/exuanbo/gulp-inject-inline/blob/master/LICENSE)
+
+## Donate
+
+<a href="https://www.buymeacoffee.com/exuanbo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-orange.png" alt="Buy Me A Coffee" height="38.25px" width="162.75px"></a>
