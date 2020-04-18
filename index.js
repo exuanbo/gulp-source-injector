@@ -21,17 +21,18 @@ const injectInline = () => {
     }
 
     if (file.isBuffer()) {
-      let contents = String(file.contents)
+      const sourceContents = String(file.contents).replace(
+        regex,
+        (_match, src) => {
+          const sourcePath =
+            src[0] === '/'
+              ? path.join(rootDir, src)
+              : path.join(file.dirname, src)
+          return String(fs.readFileSync(sourcePath))
+        }
+      )
 
-      contents = contents.replace(regex, (_match, src) => {
-        const filePath =
-          src[0] === '/'
-            ? path.join(rootDir, src)
-            : path.join(file.dirname, src)
-        return String(fs.readFileSync(filePath))
-      })
-
-      file.contents = Buffer.from(contents)
+      file.contents = Buffer.from(sourceContents)
       return callback(null, file)
     }
   })
