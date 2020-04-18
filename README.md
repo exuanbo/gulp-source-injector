@@ -1,25 +1,27 @@
 # gulp-inject-inline
 
+> A javascript, stylesheet and webcomponent inline injection plugin for Gulp.js
+
 [![npm (scoped)](https://img.shields.io/npm/v/@exuanbo/gulp-inject-inline.svg?style=flat-square)](https://www.npmjs.com/package/@exuanbo/gulp-inject-inline)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-yellow.svg?style=flat-square)](https://standardjs.com)
 [![Travis (.com)](https://img.shields.io/travis/com/exuanbo/gulp-inject-inline.svg?style=flat-square)](http://travis-ci.com/exuanbo/gulp-inject-inline)
 [![David](https://img.shields.io/david/exuanbo/gulp-inject-inline.svg?style=flat-square)](https://david-dm.org/exuanbo/gulp-inject-inline)
 [![License](https://img.shields.io/github/license/exuanbo/gulp-inject-inline.svg?style=flat-square)](https://github.com/exuanbo/gulp-inject-inline/blob/master/LICENSE)
 
-> A javascript, stylesheet and webcomponent inline injection plugin for Gulp.js
-
 ## Table of Contents
 
-- [Introduction](#introduction)
+- [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example](#example)
-  - [White Space](#white-space)
+  - [Indentation](#indentation)
 - [License](#license)
 
-## Introduction
+## Description
 
 `@exuanbo/gulp-inject-inline` transforms content of each source file to a string and injects each transformed string into placeholders in the target stream files.
+
+This plugin does not do any minification to source files, so whitespaces will be preserved. It's better to use it after transformations like `gulp-uglify-es` or `gulp-clean-css`.
 
 ## Installation
 
@@ -33,7 +35,7 @@ npm install --save-dev @exuanbo/gulp-inject-inline
 
 Injection placeholders are comments as html syntax `<!-- inject-inline: filePath -->` and css/js syntax `/* inject-inline: filePath */`
 
-By default the injected file paths are relative to each target file's `cwd`. If the path starts with `/`, it will be relative to the directory of `gulpfile.js`
+By default the injected file path is relative to each target file's `cwd`. If the provided path starts with `/`, it will be relative to the directory of `gulpfile.js`
 
 ## Example
 
@@ -123,9 +125,9 @@ gulp.task('inject', () => {
 </html>
 ```
 
-### White Space
+### Indentation
 
-Existing whitespaces won't be preserved
+Note that existing indentation won't be preserved.
 
 Target file `src/index.html`
 
