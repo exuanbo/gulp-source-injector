@@ -38,7 +38,11 @@
     "gulp",
     "gulp-inject",
     "inject",
-    "inject-inline"
+    "inject-inline",
+    "js",
+    "css",
+    "html",
+    "webcomponent"
   ],
   "author": {
     "name": "exuanbo",
