@@ -20,17 +20,14 @@ const injectInline = () => {
       return callback(new PluginError(PLUGIN_NAME, 'Streaming not supported'))
     }
 
-    const sourceContents = String(file.contents).replace(
-      regex,
-      (_match, src) => {
-        const sourcePath = src.startsWith('/')
-          ? path.join(rootDir, src)
-          : path.join(file.dirname, src)
-        return String(fs.readFileSync(sourcePath))
-      }
-    )
+    const fileContents = String(file.contents).replace(regex, (_match, src) => {
+      const sourcePath = src.startsWith('/')
+        ? path.join(rootDir, src)
+        : path.join(file.dirname, src)
+      return String(fs.readFileSync(sourcePath))
+    })
 
-    file.contents = Buffer.from(sourceContents)
+    file.contents = Buffer.from(fileContents)
     callback(null, file)
   })
 }
