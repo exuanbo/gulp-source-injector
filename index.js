@@ -23,10 +23,9 @@ const injectInline = () => {
     const sourceContents = String(file.contents).replace(
       regex,
       (_match, src) => {
-        const sourcePath =
-          src[0] === '/'
-            ? path.join(rootDir, src)
-            : path.join(file.dirname, src)
+        const sourcePath = src.startsWith('/')
+          ? path.join(rootDir, src)
+          : path.join(file.dirname, src)
         return String(fs.readFileSync(sourcePath))
       }
     )
