@@ -1,6 +1,6 @@
 {
   "name": "@exuanbo/gulp-inject-inline",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A javascript, stylesheet and webcomponent inline injection plugin for Gulp.js",
   "main": "index.js",
   "directories": {
