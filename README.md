@@ -1,4 +1,4 @@
-# gulp-inject-inline
+# @exuanbo/gulp-inject-inline
 
 > A javascript, stylesheet and webcomponent inline injection plugin for Gulp.js
 
