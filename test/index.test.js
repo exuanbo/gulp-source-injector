@@ -3,19 +3,19 @@
 const fs = require('fs')
 const should = require('should')
 const Vinyl = require('vinyl')
-const injectInline = require('../index.js')
+const injectInline = require('..')
 
 describe('gulp-inject-inline', () => {
   it('Should inject resources into test.html, making it equal to expected.html', done => {
     const testHtml = new Vinyl({
-      path: 'test/resources/test.html',
       base: 'test/resources/',
+      path: 'test/resources/test.html',
       contents: fs.readFileSync('test/resources/test.html')
     })
 
     const expectedHtml = new Vinyl({
-      path: 'test/expected.html',
       base: 'test/',
+      path: 'test/expected.html',
       contents: fs.readFileSync('test/expected.html')
     })
 

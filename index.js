@@ -9,9 +9,6 @@ const PLUGIN_NAME = '@exuanbo/gulp-inject-inline'
 
 const injectInline = () => {
   return through.obj((file, encoding, callback) => {
-    const regex = /(?:<!--|\/\*)\s*?inject-inline:\s*?([^\s].+?)\s*?(?:-->|\*\/)/gi
-    const rootDir = process.cwd()
-
     if (file.isNull()) {
       return callback(null, file)
     }
@@ -19,6 +16,9 @@ const injectInline = () => {
     if (file.isStream()) {
       return callback(new PluginError(PLUGIN_NAME, 'Streaming not supported'))
     }
+
+    const regex = /(?:<!--|\/\*)\s*?inject-inline:\s*?([^\s].+?)\s*?(?:-->|\*\/)/gi
+    const rootDir = process.cwd()
 
     const fileContents = String(file.contents).replace(regex, (_match, src) => {
       const sourcePath = src.startsWith('/')
