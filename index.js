@@ -18,16 +18,18 @@ const injectInline = () => {
     }
 
     const regex = /(?:<!--|\/\*)\s*?inject-inline:\s*?([^\s].+?)\s*?(?:-->|\*\/)/gi
-    const rootDir = process.cwd()
 
-    const fileContents = String(file.contents).replace(regex, (_match, src) => {
-      const sourcePath = src.startsWith('/')
-        ? path.join(rootDir, src)
-        : path.join(file.dirname, src)
-      return String(fs.readFileSync(sourcePath))
-    })
+    const newFileContents = String(file.contents).replace(
+      regex,
+      (_match, src) => {
+        const sourcePath = src.startsWith('/')
+          ? path.join(process.cwd(), src)
+          : path.join(file.dirname, src)
+        return String(fs.readFileSync(sourcePath))
+      }
+    )
 
-    file.contents = Buffer.from(fileContents)
+    file.contents = Buffer.from(newFileContents)
     callback(null, file)
   })
 }
