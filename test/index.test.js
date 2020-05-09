@@ -22,17 +22,16 @@ describe('gulp-inject-inline', () => {
 
     const stream = injectInline()
 
-    stream.on('error', error => {
-      should.exist(error)
-      done(error)
+    stream.on('error', err => {
+      should.exist(err)
+      done(err)
     })
 
     stream.on('data', file => {
       should.exist(file)
       should.exist(file.contents)
 
-      const contents = String(file.contents)
-      contents.should.equal(String(expectedHtml.contents))
+      should.equal(String(file.contents), String(expectedHtml.contents))
       done()
     })
 
