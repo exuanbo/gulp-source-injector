@@ -95,33 +95,19 @@ gulp.task('inject', () => {
     <meta title="test">
     <style>
       body {
-        width: 100vw;
-        height: 100vh;
-
-        margin: 0;
-        padding: 0;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-
-        background-color: #4a596b;
+        background-color: #333;
       }
-      h1 {
-        width: 50%;
-        color: #eeeeee;
 
-        text-align: center;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      h1 {
+        color: #EEE;
       }
     </style>
     <script>
-      console.log('Done!')
+      console.log('foobar')
     </script>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Lorem Ipsum</h1>
   </body>
 </html>
 ```
