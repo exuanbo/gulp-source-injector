@@ -75,12 +75,13 @@ Target file `src/index.html`
 `gulpfile.js`
 
 ```javascript
+const gulp = require('gulp')
 const injectInline = require('@exuanbo/gulp-inject-inline')
 
 gulp.task('inject', () => {
-  gulp.src('src/index.html')
+  return gulp.src('src/index.html')
     .pipe(injectInline())
-    .pipe(gulp.dest("dist"))
+    .pipe(gulp.dest('dist'))
 })
 ```
 
