@@ -35,7 +35,7 @@ npm install --save-dev @exuanbo/gulp-inject-inline
 
 Injection placeholders are comments as html syntax `<!-- inject-inline: filePath -->` and css/js syntax `/* inject-inline: filePath */`
 
-By default the injected file path is relative to each target file's `cwd`. If the provided path starts with `/`, it will be relative to the directory of `gulpfile.js`
+By default the injected file path is relative to each target file's `cwd`. If the provided path starts with `/`, it will be considered relative to the directory of `gulpfile.js`
 
 ## Example
 
