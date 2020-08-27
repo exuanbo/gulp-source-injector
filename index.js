@@ -1,5 +1,3 @@
-'use strict'
-
 const fs = require('fs')
 const path = require('path')
 const through = require('through2')
@@ -8,7 +6,7 @@ const PluginError = require('plugin-error')
 const PLUGIN_NAME = '@exuanbo/gulp-inject-inline'
 
 const injectInline = () => {
-  return through.obj((file, encoding, callback) => {
+  return through.obj((file, _, callback) => {
     if (file.isNull()) {
       return callback(null, file)
     }
