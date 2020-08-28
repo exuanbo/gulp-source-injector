@@ -1,7 +1,7 @@
 {
-  "name": "@exuanbo/gulp-inject-inline",
-  "version": "1.1.2",
-  "description": "A javascript, stylesheet and webcomponent inline injection plugin for Gulp.js",
+  "name": "gulp-source-injector",
+  "version": "0.0.0",
+  "description": "Injects any source into any file.",
   "main": "index.js",
   "module": "index.es.js",
   "directories": {
@@ -14,14 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/exuanbo/gulp-inject-inline.git"
+    "url": "git+https://github.com/exuanbo/gulp-source-injector.git"
   },
   "keywords": [
     "gulpplugin",
     "gulp",
-    "gulp-inject",
+    "gulp-injector",
     "inject",
-    "inject-inline",
     "js",
     "css",
     "html",
@@ -29,14 +28,13 @@
   ],
   "author": {
     "name": "exuanbo",
-    "email": "exuanbo@protonmail.com",
-    "url": "https://exuanbo.xyz"
+    "email": "exuanbo@protonmail.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/exuanbo/gulp-inject-inline/issues"
+    "url": "https://github.com/exuanbo/gulp-source-injector/issues"
   },
-  "homepage": "https://github.com/exuanbo/gulp-inject-inline#readme",
+  "homepage": "https://github.com/exuanbo/gulp-source-injector#readme",
   "dependencies": {
     "plugin-error": "^1.0.1",
     "through2": "^4.0.0"
@@ -61,7 +59,6 @@
     "vinyl": "2.2.0"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "registry": "https://registry.npmjs.org/"
   }
 }
