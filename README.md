@@ -1,12 +1,12 @@
-# @exuanbo/gulp-inject-inline
+# gulp-source-injector
 
-> A javascript, stylesheet and webcomponent inline injection plugin for Gulp.js
+> Injects any source into any file.
 
-[![npm (scoped)](https://img.shields.io/npm/v/@exuanbo/gulp-inject-inline.svg?style=flat-square)](https://www.npmjs.com/package/@exuanbo/gulp-inject-inline)
+[![npm](https://img.shields.io/npm/v/gulp-source-injector.svg?style=flat-square)](https://www.npmjs.com/package/gulp-source-injector)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
-[![Travis (.com)](https://img.shields.io/travis/com/exuanbo/gulp-inject-inline/master.svg?style=flat-square)](http://travis-ci.com/exuanbo/gulp-inject-inline)
-[![David](https://img.shields.io/david/exuanbo/gulp-inject-inline.svg?style=flat-square)](https://david-dm.org/exuanbo/gulp-inject-inline)
-[![License](https://img.shields.io/github/license/exuanbo/gulp-inject-inline.svg?style=flat-square)](https://github.com/exuanbo/gulp-inject-inline/blob/master/LICENSE)
+[![Travis (.com)](https://img.shields.io/travis/com/exuanbo/gulp-source-injector/master.svg?style=flat-square)](http://travis-ci.com/exuanbo/gulp-source-injector)
+[![David](https://img.shields.io/david/exuanbo/gulp-source-injector.svg?style=flat-square)](https://david-dm.org/exuanbo/gulp-source-injector)
+[![License](https://img.shields.io/github/license/exuanbo/gulp-source-injector.svg?style=flat-square)](https://github.com/exuanbo/gulp-source-injector/blob/master/LICENSE)
 
 ## Table of Contents
 
@@ -19,21 +19,21 @@
 
 ## Description
 
-`@exuanbo/gulp-inject-inline` transforms content of each source file to a string and injects each transformed string into placeholders in the target stream files.
+`gulp-source-injector` transforms content of each source file to a string and injects each transformed string into placeholders in the target stream files.
 
 This plugin does not do any minification to source files, so whitespaces will be preserved. It's better to use it after transformations like `gulp-uglify-es` or `gulp-clean-css`.
 
 ## Installation
 
-Install `@exuanbo/gulp-inject-inline` as a development dependency
+Install `gulp-source-injector` as a development dependency
 
 ```shell
-npm install --save-dev @exuanbo/gulp-inject-inline
+npm install --save-dev gulp-source-injector
 ```
 
 ## Usage
 
-Injection placeholders are comments as html syntax `<!-- inject-inline: filePath -->` and css/js syntax `/* inject-inline: filePath */`
+Injection placeholders are comments as html syntax `<!-- inject: filePath -->` and css/js syntax `/* inject: filePath */`
 
 By default the injected file path is relative to each target file's `cwd`. If the provided path starts with `/`, it will be considered relative to the directory of `gulpfile.js`
 
@@ -58,12 +58,12 @@ Target file `src/index.html`
 ```html
 <html>
   <head>
-    <!-- inject-inline: /src/template/head.html -->
+    <!-- inject: /src/template/head.html -->
     <style>
-      /* inject-inline: ./css/style.css */
+      /* inject: ./css/style.css */
     </style>
     <script>
-      /*inject-inline:js/script.js*/
+      /*inject:js/script.js*/
     </script>
   </head>
   <body>
@@ -75,15 +75,23 @@ Target file `src/index.html`
 `gulpfile.js`
 
 ```javascript
-const gulp = require('gulp')
-const injectInline = require('@exuanbo/gulp-inject-inline')
+const { task, src, dest } = require('gulp')
+const inject = require('gulp-source-injector')
 
-gulp.task('inject', () => {
-  return gulp.src('src/index.html')
-    .pipe(injectInline())
-    .pipe(gulp.dest('dist'))
+task('inject', () => {
+  return src('src/index.html')
+    .pipe(inject())
+    .pipe(dest('dist'))
 })
 ```
+
+or you can
+
+```javascript
+import inject from 'gulp-source-injector'
+```
+
+and then
 
 `dist/index.html` after running `gulp inject`
 
@@ -122,7 +130,7 @@ Target file `src/index.html`
 <html>
   <head>
     <style>
-      /* inject-inline: ./css/style.css */
+      /* inject: ./css/style.css */
     </style>
   </head>
   <body>
@@ -166,7 +174,7 @@ h1 {
 
 ## License
 
-[MIT](https://github.com/exuanbo/gulp-inject-inline/blob/master/LICENSE)
+[MIT](https://github.com/exuanbo/gulp-source-injector/blob/master/LICENSE)
 
 ## Donate
 
