@@ -1,6 +1,6 @@
 {
   "name": "gulp-source-injector",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Injects any source into any file.",
   "main": "index.js",
   "module": "index.es.js",
