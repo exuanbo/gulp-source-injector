@@ -15,7 +15,7 @@ const inject = () => {
       return callback(new PluginError(PLUGIN_NAME, 'Streaming not supported'))
     }
 
-    const regex = /(?:<!--|\/\*)\s*?inject-inline:\s*?([^\s].+?)\s*?(?:-->|\*\/)/gi;
+    const regex = /(?:<!--|\/\*)\s*?inject:\s*?([^\s].+?)\s*?(?:-->|\*\/)/gi;
 
     const newFileContents = String(file.contents).replace(
       regex,
