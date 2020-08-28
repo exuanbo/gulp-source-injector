@@ -5,9 +5,9 @@ const path = require('path')
 const through = require('through2')
 const PluginError = require('plugin-error')
 
-const PLUGIN_NAME = '@exuanbo/gulp-inject-inline'
+const PLUGIN_NAME = 'gulp-source-injector'
 
-const injectInline = () => {
+const inject = () => {
   return through.obj((file, _, callback) => {
     if (file.isNull()) {
       return callback(null, file)
@@ -34,4 +34,4 @@ const injectInline = () => {
   })
 }
 
-module.exports = injectInline
+module.exports = inject

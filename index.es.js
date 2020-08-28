@@ -3,9 +3,9 @@ import path from 'path';
 import through from 'through2';
 import PluginError from 'plugin-error';
 
-const PLUGIN_NAME = '@exuanbo/gulp-inject-inline';
+const PLUGIN_NAME = 'gulp-source-injector';
 
-const injectInline = () => {
+const inject = () => {
   return through.obj((file, _, callback) => {
     if (file.isNull()) {
       return callback(null, file)
@@ -32,6 +32,6 @@ const injectInline = () => {
   })
 };
 
-var gulpInjectInline = injectInline;
+var gulpInjectInline = inject;
 
 export default gulpInjectInline;
