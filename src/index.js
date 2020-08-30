@@ -19,15 +19,12 @@ const inject = () => {
 
     const regex = /(?:<!--|\/\*)\s*?inject:\s*?([^\s].+?)\s*?(?:-->|\*\/)/gi
 
-    const newFileContents = String(file.contents).replace(
-      regex,
-      (_match, src) => {
-        const sourcePath = src.startsWith('/')
-          ? path.join(process.cwd(), src)
-          : path.join(file.dirname, src)
-        return String(fs.readFileSync(sourcePath))
-      }
-    )
+    const newFileContents = String(file.contents).replace(regex, (_, src) => {
+      const sourcePath = src.startsWith('/')
+        ? path.join(process.cwd(), src)
+        : path.join(file.dirname, src)
+      return String(fs.readFileSync(sourcePath))
+    })
 
     file.contents = Buffer.from(newFileContents)
     callback(null, file)
