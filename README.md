@@ -11,7 +11,7 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Installation](#installation)
+- [Install](#install)
 - [Usage](#usage)
 - [Example](#example)
   - [Indentation](#indentation)
@@ -21,13 +21,11 @@
 
 `gulp-source-injector` transforms content of each source file to a string and injects each transformed string into placeholders in the target stream files.
 
-This plugin does not do any minification to source files, so whitespaces will be preserved. It's better to use it after transformations like `gulp-uglify-es` or `gulp-clean-css`.
+This plugin does not do any minification to source files, so whitespaces will be preserved. It's better to use it after transformations like `gulp-terser` or `gulp-clean-css`.
 
-## Installation
+## Install
 
-Install `gulp-source-injector` as a development dependency
-
-```shell
+```bash
 npm install --save-dev gulp-source-injector
 ```
 
@@ -41,7 +39,7 @@ By default the injected file path is relative to each target file's `cwd`. If th
 
 Project structure
 
-```shell
+```bash
 ├── src
 │   ├── css
 │   │   └── style.css
@@ -67,7 +65,7 @@ Target file `src/index.html`
     </script>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Lorem Ipsum</h1>
   </body>
 </html>
 ```
@@ -105,7 +103,6 @@ and then
       body {
         background-color: #333;
       }
-
       h1 {
         color: #EEE;
       }
@@ -134,7 +131,7 @@ Target file `src/index.html`
     </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Lorem Ipsum</h1>
   </body>
 </html>
 ```
@@ -145,7 +142,6 @@ Source file `src/css/style.css`
 body {
   background-color: #333;
 }
-
 h1 {
   color: #EEE;
 }
@@ -160,14 +156,13 @@ h1 {
       body {
   background-color: #333;
 }
-
 h1 {
   color: #EEE;
 }
     </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Lorem Ipsum</h1>
   </body>
 </html>
 ```
