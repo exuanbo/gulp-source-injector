@@ -8,9 +8,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "eslint 'index.js' && mocha",
+    "test": "mocha",
     "pretest": "rollup -c",
-    "build": "rimraf index.es.js && npm test"
+    "build": "rimraf dist && npm test"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "keywords": [
     "gulpplugin",
     "gulp",
-    "gulp-injector",
+    "gulp-inject",
     "inject",
     "js",
     "css",
@@ -57,8 +57,5 @@
     "rollup": "2.26.8",
     "should": "13.2.3",
     "vinyl": "2.2.0"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }
