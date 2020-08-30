@@ -2,8 +2,8 @@
   "name": "gulp-source-injector",
   "version": "1.0.0",
   "description": "Injects any source into any file.",
-  "main": "index.js",
-  "module": "index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "directories": {
     "test": "test"
   },
