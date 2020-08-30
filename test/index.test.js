@@ -2,40 +2,40 @@
 'use strict'
 
 const fs = require('fs')
-const should = require('should')
+const path = require('path')
+const expect = require('chai').expect
 const Vinyl = require('vinyl')
-const injectInline = require('..')
+const inject = require('..')
 
-describe('gulp-inject-inline', () => {
-  it('Should inject resources into test.html, making it equal to expected.html', done => {
-    const testHtml = new Vinyl({
-      base: 'test/resources/',
-      path: 'test/resources/test.html',
-      contents: fs.readFileSync('test/resources/test.html')
-    })
+describe('gulp-source-injector', () => {
+  it('works for me', done => {
+    const getFile = (filePath, contents) => {
+      filePath = filePath.replace(/\\/g, '/')
+      if (!path.extname(filePath)) filePath += '.html'
+      return new Vinyl({
+        base: path.dirname(filePath),
+        path: filePath,
+        contents: contents || fs.readFileSync(filePath)
+      })
+    }
 
-    const expectedHtml = new Vinyl({
-      base: 'test/',
-      path: 'test/expected.html',
-      contents: fs.readFileSync('test/expected.html')
-    })
+    const getFixture = filePath => {
+      return getFile(path.join(__dirname, 'fixtures', filePath))
+    }
 
-    const stream = injectInline()
+    const getExpected = filePath => {
+      return getFile(path.join(__dirname, 'expected', filePath))
+    }
 
-    stream.on('error', err => {
-      should.exist(err)
-      done(err)
-    })
-
+    const stream = inject()
+    stream.on('error', err => done(err))
     stream.on('data', file => {
-      should.exist(file)
-      should.exist(file.contents)
-
-      should.equal(String(file.contents), String(expectedHtml.contents))
+      expect(String(file.contents)).to.equal(
+        String(getExpected('expected').contents)
+      )
       done()
     })
-
-    stream.write(testHtml)
+    stream.write(getFixture('test'))
     stream.end()
   })
 })

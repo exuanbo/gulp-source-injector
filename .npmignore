@@ -1,3 +1,2 @@
-test/expected.html
-test/resources/
-*.tgz
+test/expected/
+test/fixtures/
